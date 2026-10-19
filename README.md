@@ -36,6 +36,28 @@ npx playwright install
 npm test
 ```
 
+
+
+
+# Playwright + TypeScript: tutoriales
+
+![Playwright Tests](https://github.com/playwright-tutoriales/playwright-typescript/actions/workflows/playwright.yml/badge.svg)
+
+Código de los tutoriales de mi canal de YouTube **Maria Villar | AI Automation**.
+
+## Cómo ejecutarlo
+
+```bash
+cd 01-primer-test
+npm install
+npx playwright install
+npx playwright test
+```
+
+## Contenido
+
+- `01-primer-test`: mis primeros 3 tests con Playwright + TypeScript
+
 ## 🤝 Contacto
 
 - 🎥 YouTube: [@MariaVillarAutomation](https://www.youtube.com/@MariaVillarAutomation)
