@@ -1,5 +1,7 @@
 # 🎭 Tutoriales de Automatización con Playwright
 
+![Playwright Tests](https://github.com/playwright-tutoriales/playwright-typescript/actions/workflows/playwright.yml/badge.svg)
+
 Código de los videos de mi canal de YouTube: **[Maria Villar | AI Automation](https://www.youtube.com/@MariaVillarAutomation)**
 
 Aquí encontrarás el código completo de cada tutorial para que lo descargues, lo ejecutes y lo adaptes a tus proyectos.
