@@ -22,20 +22,20 @@ jobs:
 
       - run: npm install
 
-      - name: Cachear navegadores de Playwright
+      - name: Cachear navegador de Playwright
         id: playwright-cache
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ hashFiles('01-primer-test/package-lock.json') }}
+          key: playwright-chromium-${{ runner.os }}-${{ hashFiles('01-primer-test/package-lock.json') }}
 
-      - name: Instalar navegadores (solo si no hay caché)
+      - name: Instalar Chromium (solo si no hay caché)
         if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps
+        run: npx playwright install --with-deps chromium
 
-      - name: Instalar dependencias del sistema (si hay caché)
+      - name: Instalar dependencias de Chromium (si hay caché)
         if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps
+        run: npx playwright install-deps chromium
 
       - run: npx playwright test
 
