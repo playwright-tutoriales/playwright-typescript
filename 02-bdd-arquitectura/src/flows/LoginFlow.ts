@@ -15,7 +15,7 @@ export class LoginFlow {
     await this.login.escribirClave(clave);
     await this.login.pulsarEntrar();
   }
-  async catalogoVisible() {
-    return this.login.hayCatalogo();
+  async verificarCatalogoVisible() {
+    await this.login.esperarCatalogo();
   }
 }

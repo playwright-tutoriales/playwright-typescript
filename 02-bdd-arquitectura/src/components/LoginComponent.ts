@@ -15,7 +15,7 @@ export class LoginComponent {
   async pulsarEntrar() {
     await this.page.click('#login-button');
   }
-  async hayCatalogo() {
-    return this.page.locator('.inventory_list').isVisible();
+  async esperarCatalogo() {
+    await this.page.locator('.inventory_list').waitFor({ state: 'visible', timeout: 15000 });
   }
 }

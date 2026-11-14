@@ -1,5 +1,4 @@
 import { Given, Then } from '@cucumber/cucumber';
-import { expect } from '@playwright/test';
 import { CustomWorld } from '../support/CustomWorld';
 import { LoginFlow } from '../flows/LoginFlow';
 
@@ -10,5 +9,5 @@ Given('el cliente inicia sesión con {string} y {string}',
 
 Then('el sistema muestra el catálogo de productos',
   async function (this: CustomWorld) {
-    expect(await new LoginFlow(this.page).catalogoVisible()).toBeTruthy();
+    await new LoginFlow(this.page).verificarCatalogoVisible();
   });
