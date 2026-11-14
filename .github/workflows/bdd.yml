@@ -1,9 +1,10 @@
 name: BDD tests
 on:
+  workflow_dispatch:
   push:
-    paths: ['02-bdd-arquitectura/**']
+    paths: ['02-bdd-arquitectura/**', '.github/workflows/bdd.yml']
   pull_request:
-    paths: ['02-bdd-arquitectura/**']
+    paths: ['02-bdd-arquitectura/**', '.github/workflows/bdd.yml']
 permissions:
   contents: read
 concurrency:
