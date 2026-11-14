@@ -1,0 +1,21 @@
+import { Page } from '@playwright/test';
+
+export class LoginComponent {
+  constructor(private readonly page: Page) {}
+
+  async abrir(url: string) {
+    await this.page.goto(url);
+  }
+  async escribirUsuario(valor: string) {
+    await this.page.fill('#user-name', valor);
+  }
+  async escribirClave(valor: string) {
+    await this.page.fill('#password', valor);
+  }
+  async pulsarEntrar() {
+    await this.page.click('#login-button');
+  }
+  async hayCatalogo() {
+    return this.page.locator('.inventory_list').isVisible();
+  }
+}

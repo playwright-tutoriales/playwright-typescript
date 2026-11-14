@@ -1,0 +1,8 @@
+{
+  "env": "qa",
+  "baseUrl": "https://www.saucedemo.com",
+  "browser": "chromium",
+  "headless": true,
+  "timeout": 30000,
+  "screenshotMode": "only-on-failure"
+}
