@@ -66,3 +66,11 @@ npx playwright test
 - 💼 LinkedIn: [Maria Villar](https://linkedin.com/in/mariavillar-qa/)
 
 Si te sirvió, dale ⭐ al repositorio y suscríbete al canal.
+
+## Arquitectura BDD por capas
+
+La plantilla oficial de automatización con Cucumber, Playwright y TypeScript vive en un repositorio propio de Tech Cosmo:
+
+[techcosmo/playwright-bdd-starter](https://github.com/techcosmo/playwright-bdd-starter)
+
+[![BDD tests](https://github.com/techcosmo/playwright-bdd-starter/actions/workflows/bdd.yml/badge.svg)](https://github.com/techcosmo/playwright-bdd-starter/actions/workflows/bdd.yml)
