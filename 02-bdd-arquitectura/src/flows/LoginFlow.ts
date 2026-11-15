@@ -1,6 +1,7 @@
-import { Page } from '@playwright/test';
+import { Page, expect } from '@playwright/test';
 import { LoginComponent } from '../components/LoginComponent';
 import { loadConfig } from '../support/config';
+import { buscarCaso } from '../support/csv';
 
 export class LoginFlow {
   private readonly login: LoginComponent;
@@ -17,5 +18,18 @@ export class LoginFlow {
   }
   async verificarCatalogoVisible() {
     await this.login.esperarCatalogo();
+  }
+  async iniciarSesionConCaso(caso: string) {
+    const datos = buscarCaso('usuarios.csv', caso);
+    await this.iniciarSesion(datos['usuario'], datos['clave']);
+  }
+  async verificarResultadoDelCaso(caso: string) {
+    const datos = buscarCaso('usuarios.csv', caso);
+    if (datos['resultado'] === 'catalogo') {
+      await this.login.esperarCatalogo();
+    } else {
+      const mensaje = await this.login.obtenerMensajeError();
+      expect(mensaje).toContain(datos['mensaje'].replace('Sorry.', 'Sorry,'));
+    }
   }
 }

@@ -11,3 +11,13 @@ Then('el sistema muestra el catálogo de productos',
   async function (this: CustomWorld) {
     await new LoginFlow(this.page).verificarCatalogoVisible();
   });
+
+Given('el cliente intenta acceder con los datos del caso {string}',
+  async function (this: CustomWorld, caso: string) {
+    await new LoginFlow(this.page).iniciarSesionConCaso(caso);
+  });
+
+Then('el sistema muestra el resultado esperado del caso {string}',
+  async function (this: CustomWorld, caso: string) {
+    await new LoginFlow(this.page).verificarResultadoDelCaso(caso);
+  });
